@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DbService } from '@nx-nest-next/api/data-access-db';
-import { UserCreateInput, UserUpdateInput } from '@nx-nest-next/api/generated/db-types';
+import { FindUniqueUserArgs, UserCreateInput, UserUpdateInput } from '@nx-nest-next/api/generated/db-types';
 
 @Injectable()
 export class UserService {
@@ -10,11 +10,11 @@ export class UserService {
   }
 
   findAll() {
-    return `This action returns all user`;
+    return this.db.user.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  findOne(findUniqueUser: FindUniqueUserArgs) {
+    return this.db.user.findUnique(findUniqueUser);
   }
 
   update(id: number, userUpdateInput: UserUpdateInput) {

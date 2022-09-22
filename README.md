@@ -31,8 +31,15 @@ pnpm i class-transformer
 part 2
 Youtube tutorial https://www.youtube.com/watch?v=srFCxdA3D4M
 
-npm i -D graphql-codegen @graphql-codegen/cli @graphql-codegen/near-operation-file-preset @graphql-codegen/typed-document-node @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-urql
+pnpm i -D @nrwl/next
+nx g @nrwl/next:app web
+pnpm i -D concurrently
+pnpm i urql
 
+
+pnpm i -D graphql-codegen @graphql-codegen/cli @graphql-codegen/near-operation-file-preset @graphql-codegen/typed-document-node @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-urql
+
+nx g @nrwl/node:lib client/generated/graphql-types --tags "scope:client"
 
 part 3
 Youtube tutorial https://www.youtube.com/watch?v=ptXawkMiix4

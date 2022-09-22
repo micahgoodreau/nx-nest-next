@@ -20,6 +20,9 @@
       ],
       "@nx-nest-next/api/generated/db-types": [
         "libs/api/generated/db-types/src/index.ts"
+      ],
+      "@nx-nest-next/client/generated/graphql-types": [
+        "libs/client/generated/graphql-types/src/index.ts"
       ]
     }
   },

@@ -1,5 +1,5 @@
 import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
-import { User, UserCreateInput, UserUpdateInput } from '@nx-nest-next/api/generated/db-types';
+import { FindUniqueUserArgs, User, UserCreateInput, UserUpdateInput } from '@nx-nest-next/api/generated/db-types';
 import { UserService } from './user.service';
 
 @Resolver(() => User)
@@ -11,14 +11,14 @@ export class UserResolver {
     return this.userService.create(userCreateInput);
   }
 
-  @Query(() => [User], { name: 'user' })
+  @Query(() => [User], { name: 'users' })
   findAll() {
     return this.userService.findAll();
   }
 
   @Query(() => User, { name: 'user' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.userService.findOne(id);
+  findOne(@Args() findUniqueUserArgs: FindUniqueUserArgs) {
+    return this.userService.findOne(findUniqueUserArgs);
   }
 
   @Mutation(() => User)
