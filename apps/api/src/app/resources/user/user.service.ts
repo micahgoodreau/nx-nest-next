@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserInput } from './dto/create-user.input';
-import { UpdateUserInput } from './dto/update-user.input';
+import { DbService } from '@nx-nest-next/api/data-access-db';
+import { UserCreateInput, UserUpdateInput } from '@nx-nest-next/api/generated/db-types';
 
 @Injectable()
 export class UserService {
-  create(createUserInput: CreateUserInput) {
-    return 'This action adds a new user';
+  constructor(private db: DbService) {}
+  create(userCreateInput: UserCreateInput) {
+    return this.db.user.create({data: userCreateInput});
   }
 
   findAll() {
@@ -16,8 +17,8 @@ export class UserService {
     return `This action returns a #${id} user`;
   }
 
-  update(id: number, updateUserInput: UpdateUserInput) {
-    return `This action updates a #${id} user`;
+  update(id: number, userUpdateInput: UserUpdateInput) {
+    return `This action updates a #${userUpdateInput.email} user`;
   }
 
   remove(id: number) {

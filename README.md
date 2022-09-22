@@ -1,3 +1,49 @@
+# Full-Stack Example App
+## Nx, NestJS(Fastify), GraphQL(Mercurius), Prisma, NestJS, 
+
+
+
+
+part 1
+Youtube tutorial https://www.youtube.com/watch?v=TRNf5T_97tg&t=969s
+
+
+npm i @nestjs/platform-fastify @nestjs/graphql @nestjs/mercurius graphql mercurius
+
+npm uninstall @nestjs/platform-express
+
+nx g @nrwl/nest:resource -p api --directory="app/resources" --type="graphql-code-first" --crud --name user
+
+nx g @nrwl/nest:lib api/data-access-db --buildable --tags "scope:api"
+
+npx prisma init
+npm i -D prisma
+npm i -D env-cmd
+npm install @prisma/client
+pnpm i prisma-nestjs-graphql
+
+nx g @nrwl/nest:lib api/generated/db-types --buildable --tags "scope:api"
+
+pnpm i class-validator
+pnpm i class-transformer
+
+
+part 2
+Youtube tutorial https://www.youtube.com/watch?v=srFCxdA3D4M
+
+npm i -D graphql-codegen @graphql-codegen/cli @graphql-codegen/near-operation-file-preset @graphql-codegen/typed-document-node @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-urql
+
+
+part 3
+Youtube tutorial https://www.youtube.com/watch?v=ptXawkMiix4
+npm i @fastify/cookie@6
+
+npm i bcrypt
+npm i @nestjs/passport @nestjs/jwt
+
+
+
+
 
 
 # NxNestNext

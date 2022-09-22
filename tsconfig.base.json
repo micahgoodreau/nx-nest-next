@@ -17,6 +17,9 @@
     "paths": {
       "@nx-nest-next/api/data-access-db": [
         "libs/api/data-access-db/src/index.ts"
+      ],
+      "@nx-nest-next/api/generated/db-types": [
+        "libs/api/generated/db-types/src/index.ts"
       ]
     }
   },
